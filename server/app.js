@@ -2,6 +2,9 @@ const express = require("express");
 const morgan = require("morgan");
 const Joi = require("joi");
 const fetch = require("node-fetch");
+
+const PORT = process.env.PORT || 5000;
+
 require("dotenv").config();
 
 const app = express();
@@ -38,8 +41,6 @@ function validateWeatherQueryParams(req, res, next) {
 
   next();
 }
-
-const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, (err) =>
   err
